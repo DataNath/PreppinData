@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 
 # Read in data:
-tx = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W3 2021 Transactions.csv")
-tg = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W3 2021 Targets.csv")
+tx = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W3 2023 Transactions.csv")
+tg = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W3 2023 Targets.csv")
 
 # Filter transactions to only look at DSB data:
 tx = tx.loc[tx["Transaction Code"].str.startswith("DSB")]
@@ -32,7 +32,7 @@ cb = pd.merge(agg, pv, on=["Online or In-Person","Quarter"])
 cb["Variance to Target"] = cb["Value"] - cb["Quarterly Targets"]
 
 # Output resulting data frame to CSV:
-output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W3 2021 Solution.csv", index=False, mode='w')
+output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W3 2023 Solution.csv", index=False, mode='w')
 
 # Print a completion message:
 print("Output completed!")
