@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 
 # Read in data:
-tx = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W2 2021 Transactions.csv")
-sc = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W2 2021 Swift Codes.csv")
+tx = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W2 2023 Transactions.csv")
+sc = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W2 2023 Swift Codes.csv")
 
 # Remove dashes from Sort Code field:
 tx["Sort Code"] = tx["Sort Code"].str.replace('-','')
@@ -19,7 +19,7 @@ cb["IBAN"] = 'GB' + cb["Check Digits"] + cb["SWIFT code"] + cb["Sort Code"] + cb
 output = cb.drop(columns=["Account Number","Sort Code","Bank","SWIFT code","Check Digits"])
 
 # Output new data frame to CSV:
-output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W2 2021 Solution.csv", index=False, mode='w')
+output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W2 2023 Solution.csv", index=False, mode='w')
 
 # Print a completion message:
 print("Output completed!")
