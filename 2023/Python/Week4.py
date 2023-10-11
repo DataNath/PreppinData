@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Read in data:
-xlsx = pd.ExcelFile("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W4 2021 New Customers.xlsx")
+xlsx = pd.ExcelFile("G:\My Drive\My Documents\Python\Preppin Data\Inputs\W4 2023 New Customers.xlsx")
 sheets = xlsx.sheet_names
 jan = pd.read_excel(xlsx, sheet_name="January")
 jan["Month"] = '1'
@@ -49,7 +49,7 @@ tf = tf.reset_index()
 dd = tf.groupby(["ID","Account Type","Date of Birth","Ethnicity"], as_index=False)["Joining Date"].min()
 
 # Output resulting data frame to CSV:
-dd.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W4 2021 Solution.csv", index=False, mode='w')
+dd.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W4 2023 Solution.csv", index=False, mode='w')
 
 # Print a completion message:
 print("Output completed!")
