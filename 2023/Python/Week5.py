@@ -32,7 +32,7 @@ cb = (agg.merge(ar, on="Bank", how="inner")).merge(av, on="Bank Rank per Month",
 output = cb[["Transaction Date","Bank","Value","Bank Rank per Month","Avg_Transaction_Value_per_Rank","Avg_Rank_per_Bank"]]
 
 # Output new data frame to CSV:
-output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W5 2023 Solution.csv")
+output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W5 2023 Solution.csv", index=False, mode='w')
 
 # Print a completion message:
 print("Output completed!")
