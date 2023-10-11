@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Read in data:
-data = pd.read_csv("G:\My Drive\My Documents\SQL + Snowflake\Preppin Data\W1 2021.csv")
+data = pd.read_csv("G:\My Drive\My Documents\Python\Preppin Data\W1 2021.csv")
 
 # Split the 'Store-Bike' field into 'Store' and 'Bike':
 data[["Store", "Bike"]] = data["Store - Bike"].str.split(' - ', expand = True)
@@ -23,7 +23,7 @@ data = data.iloc[10:]
 output = data.drop(columns = ["Store - Bike", "Date"])
 
 # Output new data frame to CSV:
-output.to_csv("G:\My Drive\My Documents\SQL + Snowflake\Preppin Data\Outputs\W1 2021 Solution.csv", index=False, mode='w')
+output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W1 2021 Solution.csv", index=False, mode='w')
 
 # Print a completion message:
 print("Output completed!")
