@@ -22,7 +22,6 @@ out["Value"] = out["Value"]*-1
 inb = pd.merge(tp, td, on="Transaction ID", how="inner")
 inb = inb.drop(columns=["Transaction ID", "Account From", "Cancelled?"])
 inb = inb.rename(columns={"Account To": "Account Number", "Transaction Date": "Balance Date"})
-inb["Value"] = inb["Value"]
 
 # Bring the data together with the balance as of 31st Jan:
 bal = ai.drop(columns=["Account Type","Account Holder ID"])
