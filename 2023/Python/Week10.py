@@ -40,7 +40,7 @@ cb = cb.loc[cb["Balance Date"] == selected_date]
 
 # Create a new output data frame and output, making the date clear:
 output = cb.groupby(["Account Number"], as_index=False).agg({"Balance": 'sum', "Transaction Value": 'sum'})
-output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W9 2023 Solution as of " + selected_date + ".csv", index=False, mode='w')
+output.to_csv("G:\My Drive\My Documents\Python\Preppin Data\Outputs\W10 2023 Solution as of " + selected_date + ".csv", index=False, mode='w')
 
 # Print a completion message:
 print("Output completed!")
